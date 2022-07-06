@@ -24,21 +24,7 @@ const Product = () => {
         <h1 className={styles.title}>{pizza.name}</h1>
         <span className={styles.price}>${pizza.price}</span>
         <p className={styles.desc}>{pizza.desc}</p>
-        {/* <h3 className={styles.choose}>Choose the size</h3>
-        <div className={styles.sizes}>
-          <div className={styles.size} onClick={() => setSize(0)}>
-            <Image src="/img/size.png" layout="fill" alt="" />
-            <span className={styles.number}>Small</span>
-          </div>
-          <div className={styles.size} onClick={() => setSize(1)}>
-            <Image src="/img/size.png" layout="fill" alt="" />
-            <span className={styles.number}>Medium</span>
-          </div>
-          <div className={styles.size} onClick={() => setSize(2)}>
-            <Image src="/img/size.png" layout="fill" alt="" />
-            <span className={styles.number}>Large</span>
-          </div>
-        </div> */}
+
         <h3 className={styles.choose}>Choose additional ingredients</h3>
         <div className={styles.ingredients}>
           <div className={styles.option}>
@@ -52,22 +38,40 @@ const Product = () => {
           </div>
           <div className={styles.option}>
             <input
-              className={styles.checkbox}
               type="checkbox"
-              id="Sauce"
-              name="Sauce"
+              id="white-onion"
+              name="white-onion"
+              className={styles.checkbox}
             />
-            <label htmlFor="cheese">Extra Sauce</label>
+            <label htmlFor="white-onion">
+              White Onion <span className="extraPrice"> (+$0.50) </span>
+            </label>
           </div>
 
           <div className={styles.option}>
             <input
+              type="checkbox"
+              id="mushroom"
+              name="mushroom"
+              className={styles.checkbox}
+            />
+            <label htmlFor="mushroom">
+              Mushrooms <span className="extraPrice"> (+$0.50) </span>
+            </label>
+          </div>
+        </div>
+        <h3 className={styles.choose}>Sauce Options</h3>
+        <div className={styles.ingredients}>
+          <div className={styles.option}>
+            <input
               className={styles.checkbox}
               type="checkbox"
-              id="garlic"
-              name="garlic"
+              id="sauce"
+              name="sauce"
             />
-            <label htmlFor="garlic">Garlic Sauce</label>
+            <label htmlFor="sauce">
+              Extra Sauce <span className="extraPrice"> (+$2.00) </span>
+            </label>
           </div>
 
           <div className={styles.option}>
@@ -80,6 +84,11 @@ const Product = () => {
             <label htmlFor="side">Sauce On Side</label>
           </div>
         </div>
+
+        <h3 className={styles.choose}>
+          Additional Notes/Special Accomodations?
+        </h3>
+
         <div className={styles.add}>
           <input type="number" defaultValue={1} className={styles.quantity} />
           <button className={styles.button}>Add to Cart</button>
